@@ -38,8 +38,8 @@ while True:
                 set_todos(todos)
                 window['lbox'].update(values=todos)
                 window['ibox'].update(value='')
-            except ValueError:
-                sg.popup("Please enter a value to edit")
+            except IndexError:
+                sg.popup("Please select a value to edit")
         case 'lbox':
             window['ibox'].update(value=values['lbox'][0])
         case sg.WINDOW_CLOSED:
