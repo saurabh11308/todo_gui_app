@@ -46,5 +46,5 @@ while True:
             exit()
 
 
-window.read()
+
 window.close()
