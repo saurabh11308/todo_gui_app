@@ -22,8 +22,6 @@ while True:
     event,values = window.read(timeout=200)
     timeval = time.strftime("%I:%M:%S %p",time.localtime())
     window['twidget'].update(value=timeval)
-    print(event)
-    print(values)
     match event:
         case "Add":
             try:
@@ -50,11 +48,19 @@ while True:
         case 'lbox':
             window['ibox'].update(value=values['lbox'][0])
         case 'Complete':
-            pass
+            try:
+                todos = get_todos()
+                todo_complete = values['lbox'][0]
+                todos.remove(todo_complete)
+                set_todos(todos)
+                window['lbox'].update(values=todos)
+                window['ibox'].update(value='')
+            except IndexError:
+                sg.popup("Please select a value to complete first")
         case 'Exit':
             exit()
         case sg.WINDOW_CLOSED:
-            exit()
+            break
 
 
 
