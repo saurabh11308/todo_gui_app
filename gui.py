@@ -15,7 +15,8 @@ c_button = sg.Button("Complete")
 e_button = sg.Button("Exit")
 
 
-layout = [[time_text],[label],[ibox,add_button],[list_box,edit_button],[c_button,e_button]]
+layout = [[time_text],[label],[ibox,add_button],[list_box,edit_button]
+    ,[c_button,e_button]]
 window = sg.Window("Todo App",layout=layout,font=('Calibara',10))
 
 while True:
