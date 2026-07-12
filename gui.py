@@ -6,13 +6,14 @@ sg.theme("Reddit")
 
 label = sg.Text("This is a to-do app")
 ibox = sg.InputText(tooltip="Enter todo :-",key='ibox')
-add_button = sg.Button(key="Add",image_filename="add.png",mouseover_colors='red')
+add_button = sg.Button(key="Add",image_filename="add.png",
+                       mouseover_colors='red',size=10,tooltip="Add Button")
 list_box = sg.Listbox(values=get_todos(),key='lbox',enable_events=True
                       ,size=(45,10))
 edit_button = sg.Button("Edit",mouseover_colors='red')
 time_text = sg.Text(key="twidget",text_color='blue')
 c_button = sg.Button(key="Complete",image_filename="complete.png",mouseover_colors='red')
-e_button = sg.Button("Exit",mouseover_colors='red')
+e_button = sg.Button(key="Exit",mouseover_colors='red',image_filename="exit.png")
 
 
 layout = [[time_text],[label],[ibox,add_button],[list_box,edit_button]
@@ -21,7 +22,7 @@ window = sg.Window("Todo App",layout=layout,font=('Calibara',10))
 
 while True:
     event,values = window.read(timeout=200)
-    timeval = time.strftime("%I:%M:%S %p",time.localtime())
+    timeval = time.strftime("%I:%M:%S %p")
     window['twidget'].update(value=timeval)
     match event:
         case "Add":
