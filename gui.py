@@ -1,5 +1,6 @@
 import FreeSimpleGUI as sg
 from backend import get_todos,set_todos
+import time
 
 sg.theme("Reddit")
 
@@ -9,12 +10,15 @@ add_button = sg.Button("Add")
 list_box = sg.Listbox(values=get_todos(),key='lbox',enable_events=True
                       ,size=(45,10))
 edit_button = sg.Button("Edit")
+time_text = sg.Text(key="twidget",text_color='blue')
 
-layout = [[label],[ibox,add_button],[list_box,edit_button]]
+layout = [[time_text],[label],[ibox,add_button],[list_box,edit_button]]
 window = sg.Window("Todo App",layout=layout,font=('Calibara',10))
 
 while True:
-    event,values = window.read()
+    event,values = window.read(timeout=200)
+    timeval = time.strftime("%I:%M:%S %p",time.localtime())
+    window['twidget'].update(value=timeval)
     print(event)
     print(values)
     match event:
