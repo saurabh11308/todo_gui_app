@@ -6,13 +6,13 @@ sg.theme("Reddit")
 
 label = sg.Text("This is a to-do app")
 ibox = sg.InputText(tooltip="Enter todo :-",key='ibox')
-add_button = sg.Button("Add")
+add_button = sg.Button(key="Add",image_filename="add.png",mouseover_colors='red')
 list_box = sg.Listbox(values=get_todos(),key='lbox',enable_events=True
                       ,size=(45,10))
-edit_button = sg.Button("Edit")
+edit_button = sg.Button("Edit",mouseover_colors='red')
 time_text = sg.Text(key="twidget",text_color='blue')
-c_button = sg.Button("Complete")
-e_button = sg.Button("Exit")
+c_button = sg.Button(key="Complete",image_filename="complete.png",mouseover_colors='red')
+e_button = sg.Button("Exit",mouseover_colors='red')
 
 
 layout = [[time_text],[label],[ibox,add_button],[list_box,edit_button]
