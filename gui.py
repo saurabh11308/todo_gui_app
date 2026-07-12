@@ -11,8 +11,11 @@ list_box = sg.Listbox(values=get_todos(),key='lbox',enable_events=True
                       ,size=(45,10))
 edit_button = sg.Button("Edit")
 time_text = sg.Text(key="twidget",text_color='blue')
+c_button = sg.Button("Complete")
+e_button = sg.Button("Exit")
 
-layout = [[time_text],[label],[ibox,add_button],[list_box,edit_button]]
+
+layout = [[time_text],[label],[ibox,add_button],[list_box,edit_button],[c_button,e_button]]
 window = sg.Window("Todo App",layout=layout,font=('Calibara',10))
 
 while True:
@@ -46,6 +49,10 @@ while True:
                 sg.popup("Please select a value to edit")
         case 'lbox':
             window['ibox'].update(value=values['lbox'][0])
+        case 'Complete':
+            pass
+        case 'Exit':
+            exit()
         case sg.WINDOW_CLOSED:
             exit()
 
