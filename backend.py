@@ -1,4 +1,10 @@
 FILEPATH = "todos1.txt"
+import os
+
+if not os.path.exists(FILEPATH):
+    with open(FILEPATH,'w'):
+        pass
+
 
 def get_todos(filepath=FILEPATH):
     """This function or routine is used to read the todos from the

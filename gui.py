@@ -3,7 +3,6 @@ from backend import get_todos,set_todos
 import time
 
 sg.theme("Reddit")
-
 label = sg.Text("This is a to-do app")
 ibox = sg.InputText(tooltip="Enter todo :-",key='ibox')
 add_button = sg.Button(key="Add",image_filename="add.png",
