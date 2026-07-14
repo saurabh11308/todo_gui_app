@@ -13,7 +13,7 @@ list_box = sg.Listbox(values=get_todos(),key='lbox',enable_events=True
 edit_button = sg.Button("Edit",mouseover_colors='red')
 time_text = sg.Text(key="twidget",text_color='blue')
 c_button = sg.Button(key="Complete",image_filename="complete.png",mouseover_colors='red')
-e_button = sg.Button(key="Exit",mouseover_colors='red',image_filename="exit.png")
+e_button = sg.Button("Exit",mouseover_colors='red')
 
 
 layout = [[time_text],[label],[ibox,add_button],[list_box,edit_button]

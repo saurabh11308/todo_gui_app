@@ -13,7 +13,6 @@ def set_todos(todos_arg,filepath=FILEPATH):
     with open(filepath,'w') as file:
         file.writelines(todos_arg)
 
-print(__name__)
 if __name__=="__main__":
     print(get_todos())
     help(get_todos)
