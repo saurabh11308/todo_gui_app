@@ -59,7 +59,7 @@ while True:
             except IndexError:
                 sg.popup("Please select a value to complete first")
         case 'Exit':
-            exit()
+            break
         case sg.WINDOW_CLOSED:
             break
 
